@@ -1,0 +1,19 @@
+version: "3"
+services:
+    mirror:
+        build: .
+        image: ctic/archlinux-mirror
+        ports:
+            - "5017:80"
+        environment:
+            - VIRTUAL_HOST=archlinux.mirror.ufpa.br
+        volumes:
+            - /mirror/archlinux:/archlinux_mirror
+
+volumes:
+    var:
+
+        #networks:
+#    default:
+#        external:
+#            name: nginx-proxy
