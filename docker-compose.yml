@@ -1,17 +1,26 @@
 version: "3"
 services:
-    mirror:
-        build: .
-        image: ctic/archlinux-mirror
-        ports:
-            - "5017:80"
-        environment:
-            - VIRTUAL_HOST=archlinux.mirror.ufpa.br
-        volumes:
-            - /mirror/archlinux:/archlinux_mirror
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
 
-volumes:
-    var:
+  mirror:
+    build: .
+    image: ctic/archlinux-mirror
+    #ports:
+    #    - "5017:80"
+    environment:
+      - VIRTUAL_HOST=archlinux.mirror.ufpa.br
+    volumes:
+      - /mirror/archlinux:/archlinux_mirror
+
+    #volumes:
+    #var:
+    #mirror:
 
         #networks:
 #    default:
