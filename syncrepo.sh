@@ -16,7 +16,9 @@ lock='/tmp/mirrorsync.lck'
 bwlimit=4096
 # NOTE: most people reading this very likely need to change this since
 # rsync.archlinux.org requires you to be a tier 1 mirror
-source='rsync://rsync.archlinux.org/ftp_tier1'
+#source='rsync://rsync.archlinux.org/ftp_tier1'
+#source='rsync://linorg.usp.br/archlinux/'
+source='rsync://archlinux.pop-es.rnp.br/archlinux/'
 lastupdate_url="http://rsync.archlinux.org/lastupdate"
 
 [ ! -d "${target}" ] && mkdir -p "${target}"
