@@ -8,7 +8,7 @@
 # lot of traffic.
 
 home="/archlinux_mirror"
-target="${home}/repo"
+target="${home}"
 tmp="${home}/tmp"
 lock='/tmp/mirrorsync.lck'
 # NOTE: You'll probably want to change this or remove the --bwlimit setting in
